@@ -22,6 +22,9 @@ El usuario debe determinar la vida inicial de cada protagonista.
  * 4. Muestra la vida en cada turno.
  * 5. Muestra el resultado final.
 
+![DeadpoolVSWolverine](Assets/Picture1.png)
+![DeadpoolVSWolverine](Assets/Picture2.png)
+
 
 Live demo: https://emedevelopa.github.io/DeadpoolVSWolverine/ 🚀
  
