@@ -51,11 +51,11 @@ btnStart.addEventListener("click", function() {
         const numerosInput = /^\d+$/;
 
         if (!numerosInput.test(deadpoolInput)) {
-          alert("Por favor, introduce un número válido para Deadpool");
+          alert("Please enter a valid number for Deadpool");
           return;
         }
         if (!numerosInput.test(wolverineInput)) {
-          alert("Por favor, introduce un número válido para Wolverine");
+          alert("Please enter a valid number for Wolverine");
           return;
         }
 
@@ -121,7 +121,7 @@ async function batalla(deadpoolHealth, wolverineHealth) {
 
         // Texto de inicio del turno de Deadpool
         reiniciarAnimacion(battleText);
-        battleText.textContent = "Turno de Deadpool";
+        battleText.textContent = "It's Deadpool's turn";
         await esperarAnimacion(battleText);
 
         // Pausa para que el usuario lea el mensaje
@@ -136,7 +136,7 @@ async function batalla(deadpoolHealth, wolverineHealth) {
                 
                 // Texto de ataque
                 reiniciarAnimacion(battleText);
-                battleText.textContent = `Deadpool ataca a Wolverine por ${ataqueDeadpool} puntos de daño`;
+                battleText.textContent = `Deadpool attacks Wolverine for ${ataqueDeadpool} damage`;
                 await esperarAnimacion(battleText);
                 ocultarTurnoDeadpool()
                 // Pausa antes de iniciar animaciones
@@ -173,7 +173,8 @@ async function batalla(deadpoolHealth, wolverineHealth) {
                 // Evento especial si el ataque fue máximo
                 if (ataqueDeadpool === 100) {
                     reiniciarAnimacion(battleText);
-                    battleText.textContent = "Wolverine está muy herido y no podrá atacar en el siguiente turno";
+                    battleText.textContent = "Wolverine is severely injured and cannot attack on the next turn";
+
                     await esperarAnimacion(battleText);
                     await new Promise(resolve => setTimeout(resolve, 1000));
                     wolverineSaltaTurno = true;
@@ -181,14 +182,14 @@ async function batalla(deadpoolHealth, wolverineHealth) {
             } else {
                 // Mensaje de esquivar
                 reiniciarAnimacion(battleText);
-                battleText.textContent = "Wolverine esquiva el ataque de Deadpool";
+                battleText.textContent = "Wolverine dodges Deadpool's attack";
                 await esperarAnimacion(battleText);
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
         } else {
             // Mensaje de recuperación
             reiniciarAnimacion(battleText);
-            battleText.textContent = "Deadpool se recupera y salta su turno";
+            battleText.textContent = "Deadpool recovers and skips his turn";
             await esperarAnimacion(battleText);
             await new Promise(resolve => setTimeout(resolve, 1000));
             deadpoolSaltaTurno = false;
@@ -203,7 +204,7 @@ async function batalla(deadpoolHealth, wolverineHealth) {
             wolverineHealth = 0
             
             reiniciarAnimacion(battleText);
-            battleText.textContent = "Deadpool gana";
+            battleText.textContent = "Deadpool wins";
             await esperarAnimacion(battleText);
             break;
         }
@@ -211,7 +212,7 @@ async function batalla(deadpoolHealth, wolverineHealth) {
         // Turno de Wolverine
         const ocultarTurnoWolverine = mostrarTurno("wolverine");
         reiniciarAnimacion(battleText);
-        battleText.textContent = "Turno de Wolverine";
+        battleText.textContent = "It's Wolverine's turn";
         await esperarAnimacion(battleText);
 
         // Pausa para leer
@@ -223,7 +224,7 @@ async function batalla(deadpoolHealth, wolverineHealth) {
 
                 // Mensaje de ataque
                 reiniciarAnimacion(battleText);
-                battleText.textContent = `Wolverine ataca a Deadpool por ${ataqueWolverine} puntos de daño`;
+                battleText.textContent = `Wolverine attacks Deadpool for ${ataqueWolverine} damage`;
                 await esperarAnimacion(battleText);
                 ocultarTurnoWolverine()
 
@@ -264,7 +265,7 @@ async function batalla(deadpoolHealth, wolverineHealth) {
                 // Evento especial si el ataque fue máximo
                 if (ataqueWolverine === 120) {
                     reiniciarAnimacion(battleText);
-                    battleText.textContent = "Deadpool está muy herido y no podrá atacar en el siguiente turno";
+                    battleText.textContent = "Deadpool is severely injured and cannot attack on the next turn";
                     await esperarAnimacion(battleText);
                     await new Promise(resolve => setTimeout(resolve, 1000));
                     deadpoolSaltaTurno = true;
@@ -272,14 +273,14 @@ async function batalla(deadpoolHealth, wolverineHealth) {
             } else {
                 // Mensaje de esquivar
                 reiniciarAnimacion(battleText);
-                battleText.textContent = "Deadpool esquiva el ataque de Wolverine";
+                battleText.textContent = "Deadpool dodges Deadpool's attack";
                 await esperarAnimacion(battleText);
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
         } else {
             // Mensaje de recuperación
             reiniciarAnimacion(battleText);
-            battleText.textContent = "Wolverine se recupera y salta su turno";
+            battleText.textContent = "Wolverine recovers and skips his turn";
             await esperarAnimacion(battleText);
             await new Promise(resolve => setTimeout(resolve, 1000));
             wolverineSaltaTurno = false;
@@ -294,7 +295,7 @@ async function batalla(deadpoolHealth, wolverineHealth) {
             deadpoolHealth = 0
 
             reiniciarAnimacion(battleText);
-            battleText.textContent = "Wolverine gana";
+            battleText.textContent = "Wolverine wins";
             await esperarAnimacion(battleText);
             break;
         }
