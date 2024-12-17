@@ -169,6 +169,9 @@ async function batalla(deadpoolHealth, wolverineHealth) {
 
                 // Ajuste de la salud
                 wolverineHealth -= ataqueDeadpool;
+                if (wolverineHealth <= 0) {
+                  wolverineHealth = 0;
+              }
 
                 // Evento especial si el ataque fue máximo
                 if (ataqueDeadpool === 100) {
@@ -197,11 +200,11 @@ async function batalla(deadpoolHealth, wolverineHealth) {
 
         // Verificar si Wolverine pierde
         if (wolverineHealth <= 0) {
+            wolverineHealth = 0
             wolverineStand.style.display = "none";
             wolverineHurt.style.display = "none";
             wolverineDead.style.display = "block";
           
-            wolverineHealth = 0
             
             reiniciarAnimacion(battleText);
             battleText.textContent = "Deadpool wins";
@@ -261,6 +264,9 @@ async function batalla(deadpoolHealth, wolverineHealth) {
 
                 // Ajuste de la salud
                 deadpoolHealth -= ataqueWolverine;
+                if (deadpoolHealth <= 0) {
+                  deadpoolHealth = 0;
+              }
 
                 // Evento especial si el ataque fue máximo
                 if (ataqueWolverine === 120) {
@@ -288,11 +294,11 @@ async function batalla(deadpoolHealth, wolverineHealth) {
 
         // Verificar si Deadpool pierde
         if (deadpoolHealth <= 0) {
+            deadpoolHealth = 0
             deadpoolStand.style.display = "none";
             deadpoolHurt.style.display = "none";
             deadpoolDead.style.display = "block";
 
-            deadpoolHealth = 0
 
             reiniciarAnimacion(battleText);
             battleText.textContent = "Wolverine wins";
