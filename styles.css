@@ -1,0 +1,712 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+:root{
+   --font: "Silscreen";
+   --lineas: rgba(139, 199, 235, 0.5);
+   --fondo: rgb(17, 17, 17, 1);
+}
+
+*{
+   margin:0;
+   padding:0;
+   box-sizing: border-box;
+}
+
+body, html{
+   background-color: var(--fondo);
+   overflow:hidden;
+}
+.wave-wrapper{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+   z-index: 0; /* Detrás del contenido principal */
+   pointer-events:none;
+}
+
+.wave{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   pointer-events:none;
+   background: repeating-linear-gradient(transparent 0px 1px,#0003 3px 4px);
+   animation: waveAnimation 9s linear infinite;
+}
+
+ /* Definición de la animación */
+@keyframes waveAnimation {
+   0% {
+   transform: translateY(-100%);
+   }
+   100% {
+   transform: translateY(100%);
+   }
+}
+
+.tv__img{
+   width:100vw;
+   height:100vh;
+   display:block;
+   position:fixed;
+   z-index:1;
+   pointer-events:none;
+}
+
+/*Welcome screen*/
+.welcome__screen{
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   flex-direction:column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;  
+   z-index:1;
+   opacity:1;
+}
+
+.welcome__container{
+   width:950px;
+   height:250px;
+   display:flex;
+   flex-direction:column;
+   align-items:center;
+   justify-content:space-between;
+}
+
+.game-title{
+   color:white;
+   font-family:"Silkscreen";
+   position: relative;
+   font-size: 3rem;
+   z-index:1;
+   width:100%;
+}
+
+.game-title:before {
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: -2px;
+   width: 100%;
+   color: #fff;
+   background-color: var(--fondo);
+   overflow: hidden;
+   clip: rect(0, 900px, 0, 0);
+   animation: noise-before 3s infinite linear alternate-reverse;
+}
+
+.game-title:after {
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 2px;
+   width: 100%;
+   color: #fff;
+   background-color: var(--fondo);
+   overflow: hidden;
+   clip: rect(0, 900px, 0, 0);
+   animation: noise-after 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-before {
+   0% {
+      clip: rect(61px, 9999px, 52px, 0);
+   }
+
+   5% {
+      clip: rect(33px, 9999px, 144px, 0);
+   }
+
+   10% {
+      clip: rect(121px, 9999px, 115px, 0);
+   }
+
+   15% {
+      clip: rect(144px, 9999px, 162px, 0);
+   }
+
+   20% {
+      clip: rect(62px, 9999px, 180px, 0);
+   }
+
+   25% {
+      clip: rect(34px, 9999px, 42px, 0);
+   }
+
+   30% {
+      clip: rect(147px, 9999px, 179px, 0);
+   }
+
+   35% {
+      clip: rect(99px, 9999px, 63px, 0);
+   }
+   40% {
+      clip: rect(188px, 9999px, 122px, 0);
+   }
+
+   45% {
+      clip: rect(154px, 9999px, 14px, 0);
+   }
+
+   50% {
+      clip: rect(63px, 9999px, 37px, 0);
+   }
+
+   55% {
+      clip: rect(161px, 9999px, 147px, 0);
+   }
+
+   60% {
+      clip: rect(109px, 9999px, 175px, 0);
+   }
+
+   65% {
+      clip: rect(157px, 9999px, 88px, 0);
+   }
+
+   70% {
+      clip: rect(173px, 9999px, 131px, 0);
+   }
+
+   75% {
+      clip: rect(62px, 9999px, 70px, 0);
+   }
+
+   80% {
+      clip: rect(24px, 9999px, 153px, 0);
+   }
+
+   85% {
+      clip: rect(138px, 9999px, 40px, 0);
+   }
+
+   90% {
+      clip: rect(79px, 9999px, 136px, 0);
+   }
+
+   95% {
+      clip: rect(25px, 9999px, 34px, 0);
+}
+
+   100% {
+      clip: rect(173px, 9999px, 166px, 0);
+   }
+}
+
+@keyframes noise-after {
+   0% {
+      clip: rect(26px, 9999px, 33px, 0);
+    }
+ 
+    5% {
+       clip: rect(140px, 9999px, 198px, 0);
+    }
+ 
+    10% {
+       clip: rect(184px, 9999px, 89px, 0);
+    }
+ 
+    15% {
+       clip: rect(121px, 9999px, 6px, 0);
+    }
+ 
+    20% {
+       clip: rect(181px, 9999px, 99px, 0);
+    }
+ 
+    25% {
+       clip: rect(154px, 9999px, 133px, 0);
+    }
+ 
+    30% {
+       clip: rect(134px, 9999px, 169px, 0);
+    }
+ 
+    35% {
+       clip: rect(26px, 9999px, 187px, 0);
+    }
+ 
+    40% {
+       clip: rect(147px, 9999px, 137px, 0);
+    }
+ 
+    45% {
+       clip: rect(31px, 9999px, 52px, 0);
+    }
+ 
+    50% {
+       clip: rect(191px, 9999px, 109px, 0);
+    }
+ 
+    55% {
+       clip: rect(74px, 9999px, 54px, 0);
+    }
+ 
+    60% {
+       clip: rect(145px, 9999px, 75px, 0);
+    }
+ 
+    65% {
+       clip: rect(153px, 9999px, 198px, 0);
+    }
+ 
+    70% {
+       clip: rect(99px, 9999px, 136px, 0);
+    }
+ 
+    75% {
+       clip: rect(118px, 9999px, 192px, 0);
+    }
+ 
+    80% {
+       clip: rect(1px, 9999px, 83px, 0);
+    }
+ 
+    85% {
+       clip: rect(145px, 9999px, 98px, 0);
+    }
+ 
+    90% {
+       clip: rect(121px, 9999px, 154px, 0);
+    }
+ 
+    95% {
+       clip: rect(156px, 9999px, 44px, 0);
+    }
+ 
+    100% {
+       clip: rect(67px, 9999px, 122px, 0);
+    }
+}
+
+.game-btn{
+   padding:1rem 3rem;
+   border:2px solid white;
+   background-color:transparent;
+   color:white;
+   font-family:"Silkscreen";
+   font-size:1rem;
+   z-index:100;
+}
+.game-btn:hover{
+   color:var(--fondo);
+   background:white;
+   cursor:pointer;
+}
+.health__points{
+   width:650px;
+   display:flex;
+   justify-content:space-between;
+   align-items:center;
+}
+
+.health__input{
+   height:2rem;
+   width:250px;
+   border:none;
+   border-bottom:1px solid white;
+   background-color:transparent;
+   color:white;
+   text-align:center;
+   font-family:"Silkscreen";
+   z-index:100;
+}
+
+.health__input:focus{
+   outline:none;
+}
+
+/*--Game-container-*/
+main{
+   display:none;
+   opacity:1;
+   transition:opacity 1s ease-in-out;
+   height:100vh;
+}
+
+.game__container{
+   width: 90%;
+   height: 100%;
+   margin:0 auto;
+   position: relative;
+   display:flex;
+   flex-direction:column;
+   justify-content: space-between;
+   align-items: center;
+   padding: 2rem;
+   }
+
+.header__container{
+   width: 100%;
+}
+
+
+
+.horizon-line {
+   position: absolute;
+   top: 70%; 
+   width: 100%;
+   height: .5px;
+   background: var(--lineas);
+   box-shadow: 0 0 50px 5px rgba(139,199,235,0.3);
+   }
+
+
+.header{
+   display:flex; 
+   justify-content:space-between;
+   align-items:center;
+   padding:0 2rem;
+}
+
+.hero{
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   gap:1rem;
+}
+
+h2{
+   font-family:"Silkscreen";
+   color:white;
+   font-family:3rem;
+}
+
+.hero__img{
+   width:50px;
+   border-radius:30px;
+}
+
+.hero__title{
+   color:white;
+   font-family:"Silkscreen";
+   font-size:3rem;
+}
+
+p{
+   color:white;
+   font-family:"Silkscreen";
+}
+
+
+.fight__text{
+   display:none;
+   font-size:4rem;
+   opacity:1;
+   width:100%;
+   height:100vh;
+   position:absolute;
+   top:50%;
+   color:white;
+   font-family:"Silkscreen";
+   text-align:center;
+   transition: opacity 1.5s ease-in-out;
+   animation: scale-up-center 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.turn__text{
+   display:flex;
+   justify-content:center;
+   color:white;
+   font-size:1.5rem;
+   font-family:"Silkscreen";
+   margin-top:1rem;
+}
+
+@keyframes scale-up-center {
+   0% {
+      transform: scale(0.5);
+   }
+   100% {
+      transform: scale(1);
+   }
+}
+
+.mountains {
+   position: absolute;
+   bottom: 30%; 
+   width: 100%;
+   height: 20vh; 
+   background: rgba(0, 0, 0, 0.4); 
+   clip-path: polygon(0% 100%, 10.8% 76.59%, 30.12% 85.5%, 53.63% 63.5%, 68.97% 83.55%, 94.18% 82.29%, 100% 100%);
+   
+}
+
+.turn__icon{
+   display: none; /* Oculto por defecto */
+   position: absolute;
+     width: 30px; /* Tamaño del ícono */
+   height: 30px;
+   background-size: contain;
+   background-repeat: no-repeat;
+   top: -40px; /* Posición encima del personaje */
+   left: 50%; /* Centrado horizontalmente */
+   transform: translateX(-50%); /* Ajuste del centrado */
+   z-index: 10;
+   background-image:url('Assets/Turn-icon.png');
+}
+
+.battle__text{
+   height: 5rem;
+}
+
+
+.battle__paragraph{
+   text-align:center;
+   color:white;
+   display:block;
+   white-space:nowrap;
+   border-right:4px solid white;
+   font-family:"Silkscreen";
+   font-size:1rem;
+   animation: type 1.5s steps(90) 1.5s 1 normal both, cursor 1s step-end infinite;
+   position: relative;
+   overflow:hidden;
+}
+
+@keyframes type {
+   from {
+      width: 0;
+   }
+
+   to {
+      width: 100%;
+   }
+}
+
+@keyframes cursor {
+   50% {
+      border-color: transparent;
+   }
+}
+
+/*Sprites*/
+
+.character__sprites{
+   display:flex;
+   justify-content:space-around;
+   align-items:center;
+   position:absolute;
+   top:65%;
+   width:100%;
+}
+.deadpool__container{
+   height:50px;
+}
+.sprite__container--deadpool{
+   position:absolute;
+   height:100%;
+   display:flex;
+   justify-content:center;
+}
+.deadpool__stand{
+   display:block;
+   width: 45px;
+   height: 55px;
+   background-size:329% 100%;
+   background-repeat:no-repeat;
+   animation: stand 1s steps(3) infinite;
+   background-image:url('Assets/deadpool-stand.png');
+   
+}
+.deadpool__run{
+   display:none;
+   position:absolute;
+   width:45px;
+   height:55px;
+   background-size:300% 100%;
+   background-repeat:no-repeat;
+   animation:correr 2s steps(3), mover 2s linear forwards;
+   background-image:url('Assets/deadpool-run.png');
+   
+}
+.deadpool__attack{
+   display:none;
+   position:absolute;
+   width:58px;
+   height:55px;
+   background-size:110% 100%;
+   background-repeat:no-repeat;
+   left:35vw;
+   animation: fadeInOut 0.5s linear;
+   background-image:url('Assets/deadpool-atack.png');
+}
+.deadpool__hurt{
+   display:none;
+   position:absolute;
+   left:20px;
+   width:45px;
+   height:55px;
+   background-size:cover;
+   background-repeat:no-repeat;
+   animation:stand 1s steps(3);
+   background-image:url('Assets/deadpool-hurt.png');
+}
+.deadpool__dead{
+   display:none;
+   animation: fadeInOut 0.5s linear;
+   position:absolute;
+   top:30px;
+   width:61px;
+   height:32px;
+   background-size:cover;
+   background-repeat:no-repeat;
+   background-image:url('Assets/deadpool-dead.png');
+}
+
+
+.wolverine__container{
+   height:50px;
+}
+.sprite__container--wolverine{
+   position:absolute;
+   height:100%;
+   display:flex;
+   justify-content:center;
+   gap:1rem;
+}
+
+.wolverine__stand{
+   display:block;
+   position:absolute;
+   width:45px;
+   height:55px;
+   transform: scaleX(-1);
+   background-size:cover;
+   background-repeat:no-repeat;
+   animation: stand 1s steps(3) infinite;
+   background-image:url('Assets/wolverine-stand.png')
+}
+.wolverine__run{
+   display:none;
+   transform: scaleX(-1);
+   position:absolute;
+   width:45px;
+   height:55px;
+   background-size:300% 100%;
+   background-repeat:no-repeat;
+   animation:correr 3s steps(3), moverWolverine 2s linear forwards;
+   background-image:url('Assets/wolverine-run.png');
+   
+}
+.wolverine__attack{
+   display:none;
+   transform: scaleX(-1);
+   position:absolute;
+   width:58px;
+   height:55px;
+   background-size:110% 100%;
+   background-repeat:no-repeat;
+   right:35vw;
+   animation: fadeInOut 0.5s linear;
+   background-image:url('Assets/wolverine-atack.png');
+}
+.wolverine__hurt{
+   display:none;
+   position:absolute;
+   width:45px;
+   height:55px;
+   transform: scaleX(-1);
+   background-size:cover;
+   background-repeat:no-repeat;
+   animation:stand 1s steps(3);
+   background-image:url('Assets/wolverine-hurt.png');
+}
+.wolverine__dead{
+   display:none;
+   animation: fadeInOut 0.5s linear;
+   position:absolute;
+   top:30px;
+   width:61px;
+   height:32px;
+   transform: scaleX(-1);
+   background-size:cover;
+   background-repeat:no-repeat;
+   background-image:url('Assets/wolverine-dead.png');
+}
+
+
+/*ANIMACIONES*/
+@keyframes correr {
+   from { background-position: 0 0; }
+   to { background-position: -135px 0; } /* Desplaza el sprite completo */
+}
+@keyframes mover {
+   from { left: 0; }          /* Posición inicial en la pantalla */
+   to { left: 35vw; }        /* Posición final (ajusta según tu pantalla) */
+}
+
+@keyframes moverWolverine {
+   from { right: 0; }          /* Posición inicial en la pantalla */
+   to { right: 35vw; }        /* Posición final (ajusta según tu pantalla) */
+}
+
+@keyframes stand {
+   from {
+      background-position: 0 0; /* Comienza en la primera imagen */
+   }
+   to {
+      background-position: -135px 0; 
+   }
+}
+
+   
+@keyframes hurtWolverine {
+   from {
+      background-position: 0 0; /* Comienza en la primera imagen */
+   }
+   to {
+      background-position: -405px 0; 
+   }
+}
+   
+@keyframes fadeInOut {
+   from {
+      opacity: 1;
+   }
+   to {
+      opacity: 1; /* La duración define cuánto tiempo es visible */
+   }
+}
+
+
+@media (max-width: 768px) {
+
+   .game__container{
+      padding:2em 0;
+   }
+
+   .hero{
+      flex-direction: column;
+      gap:unset;
+   }
+   .hero__info{
+      order:0;
+   }
+   .hero__img{
+      order: -1;
+   }
+   .turn__text{
+      font-size:1rem;
+   }
+   .hero__title{
+      font-size: 2rem;
+   }
+   .battle__paragraph{
+      font-size: .7rem;
+   }
+   .game-title{
+      font-size: 1.3rem;
+   }
+   .health__points{
+      flex-direction: column;
+      gap: 2rem;
+   }
+
+}
+
+

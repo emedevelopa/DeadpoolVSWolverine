@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Wolverine VS Deadpool</title>
+</head>
+<body>
+    <img src="https://codember.dev/crt.webp" class="tv__img">
+    <div class="wave-wrapper">
+        <div class="wave"></div>
+    </div>
+    
+    <div class="welcome__screen">
+        <div class="welcome__container">
+        <div class="game-title" data-text="Deadpool VS Wolverine">Deadpool VS Wolverine</div>
+        <div class="health__points">
+            <input type="text" class="health__input health__input--Deadpool" placeholder="Deadpool Health points">
+            <input type="text" class="health__input health__input--Wolverine" placeholder="Wolverine Health points">
+        </div>
+
+        <button class="game-btn">START</button>
+    </div>    
+    </div>
+    
+    <main class="main">
+        <div class="game__container">
+    
+            <div class="header__container">
+            <div class="header">
+                <div class="hero">
+                    <img src="Assets/deadpool-hero.png" class="hero__img" alt=""imagen de Deadpool>
+                    <div class="hero__info">
+                    <p>HP</p>
+                    <p class="hero__health--Deadpool"></p>
+                </div>
+            </div>
+            <h2 class="hero__title">VS</h2>
+            <div class="hero">
+                <div class="hero__info">
+                <p>HP</p>
+                <p class="hero__health--Wolverine"></p>
+            </div>
+            <img src="Assets/wolverine-hero.png" class="hero__img" alt="imagen de Wolverine">
+            </div>
+            </div>
+            <div class="turn__text">Turn</div>
+            </div>
+            
+            <div class="fight__text">Fight!</div>
+
+            <div class="mountains"></div>
+
+            <div class="horizon-line"></div>
+            
+            <div class="character__sprites">
+                <div class="deadpool__container">
+                
+                <div class="sprite__container--deadpool">
+                    <div class="turn__icon" id="deadpoolTurnIcon"></div>
+                    <div class="deadpool__stand"></div>
+                </div>
+                
+                <div class="sprite__container--deadpool">
+                    <div class="turn__icon" id="deadpoolTurnIcon"></div>
+                    <div class="deadpool__run"></div>
+                </div>
+                
+                <div class="sprite__container--deadpool">
+                    <div class="turn__icon" id="deadpoolTurnIcon"></div>
+                    <div class="deadpool__attack"></div>
+                </div>
+                
+                <div class="sprite__container--deadpool">
+                    <div class="turn__icon" id="deadpoolTurnIcon"></div>
+                    <div class="deadpool__hurt"></div>
+                </div>
+                
+                <div class="sprite__container--deadpool">
+                    <div class="turn__icon" id="deadpoolTurnIcon"></div>
+                    <div class="deadpool__dead"></div>
+                </div>
+
+            </div>
+            <div class="wolverine__container">
+                
+                <div class="sprite__container--wolverine">
+                    <div class="turn__icon" id="wolverineTurnIcon"></div>
+                    <div class="wolverine__stand"></div>
+                </div>
+                
+                <div class="sprite__container--wolverine">
+                    <div class="turn__icon" id="wolverineTurnIcon"></div>
+                    <div class="wolverine__run"></div>
+                </div>
+                
+                <div class="sprite__container--wolverine">
+                    <div class="turn__icon" id="wolverineTurnIcon"></div>
+                    <div class="wolverine__attack"></div>
+                </div>
+                
+                <div class="sprite__container--wolverine">
+                    <div class="turn__icon" id="wolverineTurnIcon"></div>
+                    <div class="wolverine__hurt"></div>
+                </div>
+                
+                <div class="sprite__container--wolverine">
+                    <div class="turn__icon" id="wolverineTurnIcon"></div>
+                    <div class="wolverine__dead"></div>
+                </div>
+                
+            </div>
+            </div>
+            
+            <div class="battle__text">
+                <span class="battle__paragraph"></span>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
